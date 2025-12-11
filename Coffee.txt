@@ -1,0 +1,49 @@
+Cappuccino
+Latte
+Flat White
+Americano
+Mocha
+Espresso
+Double Espresso
+Macchiato
+Caramel Latte
+Vanilla Latte
+Hazelnut Latte
+Iced Latte
+Iced Mocha
+Iced Americano
+Iced Caramel Macchiato
+Cold Brew
+Nitro Cold Brew
+Cold Brew with Sweet Cream
+Affogato
+Cortado
+Red Eye
+Black Eye
+Irish Coffee
+Café au Lait
+Turkish Coffee
+Café Cubano
+Café de Olla
+Matcha Latte
+Chai Latte
+Dirty Chai
+Pumpkin Spice Latte
+Peppermint Mocha
+White Chocolate Mocha
+Honey Almond Latte
+Brown Sugar Shaken Espresso
+Oat Milk Latte
+Soy Mocha
+Almond Milk Cappuccino
+Cinnamon Dolce Latte
+Toffee Nut Latte
+Ristretto
+Doppio
+Flat White with Oat Milk
+Iced Brown Sugar Latte
+Espresso Con Panna
+Iced Honey Lavender Latte
+Salted Caramel Cold Brew
+Maple Latte
+Spanish Latte

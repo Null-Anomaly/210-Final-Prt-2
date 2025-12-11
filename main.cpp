@@ -5,6 +5,7 @@ IDE used: VSC*/
 #include <fstream>
 #include <cstdlib>
 #include <time.h>
+#include <vector>
 using namespace std;
 
 
@@ -17,3 +18,30 @@ struct Coffee
 
     struct Coffee* next;
 };
+
+
+int main()
+{
+    srand(time(NULL));
+
+    ifstream fin1 ("Coffee.txt");
+    string order;
+    vector<string> set1;
+    while(getline(fin1,order))
+    {
+        set1.push_back(order);
+    }
+    fin1.close();
+
+    ifstream fin2("Name_input.txt");
+    string name;
+    vector<string> set2;
+    while(getline(fin2,name))
+    {
+        set2.push_back(name);
+    }
+    fin2.close();
+
+
+    return 0;
+}
