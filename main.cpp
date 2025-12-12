@@ -21,7 +21,7 @@ struct Coffee
 
 int main()
 {
-    //Milestone 1 v
+    
     srand(time(NULL));
     
 
@@ -100,6 +100,6 @@ int main()
        
         
     }
-    //Milestone 1 ^
+    
     return 0;
 }
