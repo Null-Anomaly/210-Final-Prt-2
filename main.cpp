@@ -14,7 +14,6 @@ using namespace std;
 //Coffee structure
 struct Coffee
 {
-
     string name;
     string order;
     Coffee* next;
@@ -23,7 +22,7 @@ struct Coffee
 
 int main()
 {
-    //Seed
+    //Seed randomization
     srand(time(NULL));
     
     //File input 1 mislabled as set 1
@@ -128,7 +127,6 @@ int main()
             cout << set2[rand() % 100] << " has ordered a: " << muffins.front() << "\n";
             muffins.pop_front();
         }
-       
         
     }
     
