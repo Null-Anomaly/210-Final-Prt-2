@@ -1,15 +1,17 @@
 /*COMSC 210 | Final prt 2 | Lawrence Bryant
 IDE used: VSC*/
+
+//Includes
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <time.h>
 #include <vector>
-#include <list>
+#include <deque>
 using namespace std;
 
-
+//Coffee structure
 struct Coffee
 {
 
@@ -21,10 +23,10 @@ struct Coffee
 
 int main()
 {
-    
+    //Seed
     srand(time(NULL));
     
-
+    //File input 1 mislabled as set 1
     ifstream fin1 ("Coffee.txt");
     string order;
     vector<string> set1;
@@ -34,6 +36,7 @@ int main()
     }
     fin1.close();
 
+    //File 2 input mislabled as set 2 (At least in terms of having name first then order)
     ifstream fin2("Name_input.txt");
     string name;
     vector<string> set2;
@@ -43,7 +46,12 @@ int main()
     }
     fin2.close();
 
+    //Part of milestone 3. Deque.
+    deque<Coffee> muffins;
 
+
+    //This mess.
+    //Makes a linked list of 3 people to initialize
     Coffee *head = nullptr;
     Coffee *tail = nullptr;
     for(int i = 0; i < 3; i++)
@@ -65,8 +73,9 @@ int main()
             }
             temp->next = inserter;
         }
-    }
+    }  
 
+    //Loop for handling 10 potential people joining the line and ordering coffee
     for(int i = 0; i < 10; i++)
     {
         if(rand() % 2 == 0)
@@ -90,6 +99,7 @@ int main()
             }
         }
         
+        //Prints out the person and what they order when they leave the line.
         if(head != nullptr)
         { 
             cout << head->order << " has ordered a: " << head->name << "\n";
