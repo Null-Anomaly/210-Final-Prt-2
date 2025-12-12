@@ -23,6 +23,7 @@ struct Coffee
 
 int main()
 {
+    //Milestone 1 v
     srand(time(NULL));
     
 
@@ -45,12 +46,14 @@ int main()
     fin2.close();
 
     Coffee* head = NULL;
-    Coffee* temp = NULL;
+    auto it = head;
     for(int i = 0; i < set1.size(); i++)
     {
-        temp = new Coffee(set2[rand() % set2.size()], set1[rand() % set1.size()]);
-        
+        Coffee* temp = new Coffee(set1[rand() % set1.size()], set2[rand() % set2.size()]);
+        it->next = temp;
+        temp->next = NULL;
+        it++;
     }
-
+    //Milestone 1 ^
     return 0;
 }
