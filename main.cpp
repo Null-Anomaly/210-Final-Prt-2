@@ -69,33 +69,36 @@ int main()
 
     for(int i = 0; i < 10; i++)
     {
-        if(rand() % 2 == 1)
+        if(rand() % 2 == 0)
         {
             Coffee* temp = new Coffee;
             temp->name = set1[rand() % set1.size()];
             temp->order = set2[rand() % 100];
             temp->next = tail;
-            Coffee* it = head;
-            while(it->next != tail)
+            if(head == nullptr)
             {
-                it = it->next;
+                head = temp;
             }
-            it->next = temp;
+            else
+            {
+                Coffee* it = head;
+                while(it->next != tail)
+                {
+                    it = it->next;
+                }
+                it->next = temp;
+            }
         }
+        
         if(head != nullptr)
         { 
+            cout << head->order << " has ordered a: " << head->name << "\n";
             Coffee* deleter = head;
             head = head->next;
             delete deleter;
         }
        
         
-    }
-    auto it = head;
-    while(it != nullptr)
-    {
-        cout << it->order << " has ordered a: " << it->name << "\n";
-        it = it->next;
     }
     //Milestone 1 ^
     return 0;
