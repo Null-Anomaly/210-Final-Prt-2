@@ -47,7 +47,14 @@ int main()
     fin2.close();
 
     //Part of milestone 3. Deque.
-    deque<Coffee> muffins;
+    ifstream fin3("muffins.txt");
+    string muffin;
+    vector<string> set3;
+    while(getline(fin3,muffin))
+    {
+        set3.push_back(muffin);
+    }
+    deque<string> muffins;
 
 
     //This mess.
@@ -73,6 +80,9 @@ int main()
             }
             temp->next = inserter;
         }
+
+        //Random muffin
+        muffins.push_back(set3[rand() % set3.size()]);
     }  
 
     //Loop for handling 10 potential people joining the line and ordering coffee
@@ -98,6 +108,10 @@ int main()
                 it->next = temp;
             }
         }
+        if(rand() % 2 == 0)
+        {
+            muffins.push_back(set3[rand() % set3.size()]);
+        }
         
         //Prints out the person and what they order when they leave the line.
         if(head != nullptr)
@@ -106,6 +120,13 @@ int main()
             Coffee* deleter = head;
             head = head->next;
             delete deleter;
+        }
+
+        //Prints out a muffin and a person that ordered it
+        if(!muffins.empty())
+        {
+            cout << set2[rand() % 100] << " has ordered a: " << muffins.front() << "\n";
+            muffins.pop_front();
         }
        
         
