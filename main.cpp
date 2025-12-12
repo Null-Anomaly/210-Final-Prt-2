@@ -12,12 +12,10 @@ using namespace std;
 
 struct Coffee
 {
-    Coffee(string, string);
 
     string name;
     string order;
-
-    struct Coffee* next;
+    Coffee* next;
 };
 
 
@@ -45,9 +43,13 @@ int main()
     }
     fin2.close();
 
-    Coffee* head = NULL;
+
+    Coffee *head = nullptr;
+
+
+    Coffee head = person_1;
     auto it = head;
-    for(int i = 0; i < set1.size(); i++)
+    for(int i = 0; i < 10; i++)
     {
         Coffee* temp = new Coffee(set1[rand() % set1.size()], set2[rand() % set2.size()]);
         it->next = temp;
