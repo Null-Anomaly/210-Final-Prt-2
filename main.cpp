@@ -74,7 +74,7 @@ int main()
             Coffee* temp = new Coffee;
             temp->name = set1[rand() % set1.size()];
             temp->order = set2[rand() % 100];
-            temp->next = nullptr;
+            temp->next = tail;
             Coffee* it = head;
             while(it->next != tail)
             {
@@ -82,6 +82,14 @@ int main()
             }
             it->next = temp;
         }
+        if(head != nullptr)
+        { 
+            Coffee* deleter = head;
+            head = head->next;
+            delete deleter;
+        }
+       
+        
     }
     auto it = head;
     while(it != nullptr)
