@@ -55,6 +55,15 @@ int main()
     }
     deque<string> muffins;
 
+    //Part of milstone 4. Vector (But I mean everything else uses vectors as a basis)
+    ifstream fin4("bracelets.txt");
+    string bracelet;
+    vector<string> set4;
+    while(getline(fin4,bracelet))
+    {
+        set4.push_back(bracelet);
+    }
+    vector<string> bracelets;
 
     //This mess.
     //Makes a linked list of 3 people to initialize
@@ -82,6 +91,9 @@ int main()
 
         //Random muffin
         muffins.push_back(set3[rand() % set3.size()]);
+
+        //Random bracelet
+        bracelets.push_back(set4[rand() % set4.size()]);
     }  
 
     //Loop for handling 10 potential people joining the line and ordering coffee
@@ -111,11 +123,15 @@ int main()
         {
             muffins.push_back(set3[rand() % set3.size()]);
         }
+        if(rand() % 2 == 0)
+        {
+            bracelets.push_back(set4[rand() % set4.size()]);
+        }
         
         //Prints out the person and what they order when they leave the line.
         if(head != nullptr)
         { 
-            cout << head->order << " has ordered a: " << head->name << "\n";
+            cout << head->order << " has ordered a: " << head->name << "\n\n";
             Coffee* deleter = head;
             head = head->next;
             delete deleter;
@@ -124,8 +140,14 @@ int main()
         //Prints out a muffin and a person that ordered it
         if(!muffins.empty())
         {
-            cout << set2[rand() % 100] << " has ordered a: " << muffins.front() << "\n";
+            cout << set2[rand() % 100] << " has ordered a: " << muffins.front() << "\n\n";
             muffins.pop_front();
+        }
+        //Braclets!
+        if(!bracelets.empty())
+        {
+            cout << set2[rand() % 100] << " has ordered a: " << bracelets.back() << " bracelet\n\n";
+            bracelets.pop_back();
         }
         
     }
