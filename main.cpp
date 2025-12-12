@@ -49,8 +49,8 @@ int main()
     for(int i = 0; i < 3; i++)
     {
         Coffee *inserter = new Coffee;
-        inserter->name = set1[rand() % 100];
-        inserter->order = set2[rand() % set2.size()];
+        inserter->name = set1[rand() % set1.size()];
+        inserter->order = set2[rand() % 100];
         inserter->next = nullptr;
         if(head == nullptr)
         {
@@ -67,15 +67,13 @@ int main()
         }
     }
 
-
     for(int i = 0; i < 10; i++)
     {
-
         if(rand() % 2 == 1)
         {
             Coffee* temp = new Coffee;
-            temp->name = set1[rand() % 100];
-            temp->order = set2[rand() % set2.size()];
+            temp->name = set1[rand() % set1.size()];
+            temp->order = set2[rand() % 100];
             temp->next = nullptr;
             Coffee* it = head;
             while(it->next != tail)
@@ -84,8 +82,12 @@ int main()
             }
             it->next = temp;
         }
-        
-
+    }
+    auto it = head;
+    while(it != nullptr)
+    {
+        cout << it->order << " has ordered a: " << it->name << "\n";
+        it = it->next;
     }
     //Milestone 1 ^
     return 0;
