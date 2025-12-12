@@ -6,6 +6,7 @@ IDE used: VSC*/
 #include <cstdlib>
 #include <time.h>
 #include <vector>
+#include <list>
 using namespace std;
 
 
@@ -23,6 +24,7 @@ struct Coffee
 int main()
 {
     srand(time(NULL));
+    
 
     ifstream fin1 ("Coffee.txt");
     string order;
@@ -42,6 +44,13 @@ int main()
     }
     fin2.close();
 
+    Coffee* head = NULL;
+    Coffee* temp = NULL;
+    for(int i = 0; i < set1.size(); i++)
+    {
+        temp = new Coffee(set2[rand() % set2.size()], set1[rand() % set1.size()]);
+        
+    }
 
     return 0;
 }
