@@ -45,16 +45,25 @@ int main()
 
 
     Coffee *head = nullptr;
+    for(int i = 0; i < 3; i++)
+    {
+        Coffee *inserter = new Coffee;
+        inserter->name = set1[rand() % 100];
+        inserter->order = set2[rand() % set2.size()];
+        inserter->next = head;
+        head = inserter;
+    }
 
 
-    Coffee head = person_1;
-    auto it = head;
     for(int i = 0; i < 10; i++)
     {
-        Coffee* temp = new Coffee(set1[rand() % set1.size()], set2[rand() % set2.size()]);
-        it->next = temp;
-        temp->next = NULL;
-        it++;
+        
+        Coffee* temp = new Coffee;
+        temp->name = set1[rand() % 100];
+        temp->order = set2[rand() % set2.size()];
+        temp->next = head;
+        head = temp;
+
     }
     //Milestone 1 ^
     return 0;
